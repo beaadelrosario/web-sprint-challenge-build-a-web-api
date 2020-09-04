@@ -80,7 +80,7 @@ router.delete("/:id", (req, res) => {
 function validateProjectId(req, res, next) {
   projectsDb.get(req.params.id)
     .then(next())
-    .catch((error) => res.status(400).json({ message: "project with that id was not not found", error: error }));
+    .catch((error) => res.status(400).json({ message: "not working", error: error }));
 };
 
 module.exports = router;
