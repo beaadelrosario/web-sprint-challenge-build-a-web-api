@@ -63,8 +63,6 @@ const router = express.Router();
 
 // module.exports = router;
 
-
-
 router.post('/', (req, res) => {
   actionsDb.insert(req.body)
       .then((response) => {
@@ -106,5 +104,16 @@ router.delete('/:id', (req, res) => {
 });
 
 //Custom Middleware
+
+// function validateProjectId(req, res, next) {
+//   console.log("middleware hit!");
+//   next();
+// }
+
+// function validateActionId(req, res, next) {
+//   actionsDb.get(req.params.id)
+//     .then(next())
+//     .catch((error) => res.status(400).json({ message: "not working", error: error }));
+// };
 
 module.exports = router;
